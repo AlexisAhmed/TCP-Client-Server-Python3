@@ -5,7 +5,7 @@ import socket
 #Creating the socket object
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = socket.gethostbyname() #Host is the server IP
+host = socket.gethostname() #Host is the server IP
 port = 444 #Port to listen on 
 
 #Binding to socket
@@ -16,7 +16,7 @@ serversocket.listen(3)
 
 while True:
     #Starting the connection 
-    clientsocket, address = serversocket.accept()
+    clientsocket,address = serversocket.accept()
 
     print("received connection from " % str(address))
     
